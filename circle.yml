@@ -6,6 +6,7 @@ dependencies:
   - pip install hot
   - pip install git+https://github.com/JasonBoyles/envshuffle
   - pip install git+https://github.com/JasonBoyles/bumper
+  - pip install git+https://github.com/heat-tools/fuse
 test:
   override:
   - envshuffle hot test
@@ -13,4 +14,4 @@ deployment:
   stable:
     branch: master
     commands:
-    - bumper bump $CIRCLE_PROJECT_USERNAME $CIRCLE_PROJECT_REPONAME
+    - bumper bump $CIRCLE_PROJECT_USERNAME $CIRCLE_PROJECT_REPONAME && fuse flush
